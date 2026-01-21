@@ -11,9 +11,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.font.FontWeight
+
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+
 import com.example.milestokilometres.ui.theme.MilesToKilometresTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,7 +40,7 @@ fun MilesToKilometersConverter(modifier: Modifier = Modifier) {
     fun convertMilesToKilometers() {
         val miles = milesInput.toDoubleOrNull()
         kilometers = if (miles != null) {
-            String.format("%.2f", miles * 1.60934)
+            String.format(java.util.Locale.US, "%.2f", miles * 1.60934)
         } else {
             "Invalid"
         }
